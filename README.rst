@@ -13,14 +13,14 @@ If *wordlist* is run with the *-t* flag then it will use the alternative short w
 For more information see https://www.eff.org/dice.
 
 
-##Installation
+## Installation ##
 
 Install using setup tools by doing:
 ``` shell
 python setup.py install
 ```
 
-##Usage
+## Usage ##
 
 ``` shell
 Usage: wordlist [OPTIONS]
