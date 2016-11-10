@@ -2,7 +2,13 @@ EFF Wordlist Reference
 ----------------------
 Arnold G. Reinhold created the Diceware word list some years ago to provide a system for generating secure passphrases. It has since become widely used within the infosec community. This original list has recently been improved upon by the EFF, who have generated newer lists that overcome some of Diceware's shortcomings. However, they are long and inconvenient to carry around. So to save on printing, this python program will reference those lists and print out the word for a given dice result.
 
-To use, just type `wordlist` and provide the dice rolls..
+To use, just type 
+```
+#!python
+
+wordlist
+```
+ and provide the dice rolls..
 
 When a five dice are used `wordlist` will use the long wordlist provided by the EFF. This is the most secure option.
 
