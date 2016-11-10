@@ -16,13 +16,18 @@ For more information see https://www.eff.org/dice.
 ## Installation ##
 
 Install using setup tools by doing:
-``` shell
+
+```
+#!bash
+
 python setup.py install
 ```
 
+
 ## Usage ##
 
-``` shell
+``` 
+#!bash
 Usage: wordlist [OPTIONS]
 
 Options:
