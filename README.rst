@@ -17,21 +17,15 @@ For more information see https://www.eff.org/dice.
 
 Install using setup tools by doing:
 
-```
-#!bash
-
 python setup.py install
-```
+
 
 
 ## Usage ##
 
-``` 
-#!bash
 Usage: wordlist [OPTIONS]
 
 Options:
         -t, --alt-short-wordlist  Use the alternative short wordlist, with longer
                                   words that may be more memorable. Needs four dice
         --help                    Show this message and exit.
-```
