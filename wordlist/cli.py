@@ -1,9 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import click
 from .wordlist import Wordlist
 
-def run():
+@click.command()
+@click.option('-s',
+        '--alt-short-wordlist',
+        default=False,
+        is_flag=True,
+        help='Use the alternative short wordlist, with longer words that may be more memorable. Needs four dice')
+def run(alt_short_wordlist):
+    #Help text
     print("Roll five dice (or four for the short wordlist) and enter the result in no particular order")
     print("Then repeat it another five times")
 
@@ -11,11 +19,12 @@ def run():
     while True:
         try:
             die = get_die_roll()
-            wordlist = Wordlist(len(die))
+            wordlist = Wordlist(len(die), alt_short_wordlist)
             print(wordlist.select(die))
             break
-        except KeyError:
+        except KeyError as err:
             print("Please enter a valid number.")
+            print(err)
 
     #As per EFF recomendations, roll a total of 6 times
     die_rolls = 5
