@@ -1,16 +1,24 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import click
+import secrets
 from .wordlist import Wordlist
 
-@click.command()
-@click.option('-s',
-        '--alt-short-wordlist',
-        default=False,
-        is_flag=True,
-        help='Use the alternative short wordlist, with longer words that may be more memorable. Needs four dice')
-def run(alt_short_wordlist):
+def random_generator(alt_short_wordlist, short_wordlist):
+    dice = 5
+    if short_wordlist:
+        dice = 4
+
+    wordlist = Wordlist(dice, alt_short_wordlist)
+    #As per EFF recomendations, roll a total of 6 times
+    password = ' '.join(wordlist.select(random_diceroll(dice)) for i in range(6))
+    print(password)
+
+def random_diceroll(dice):
+    #Generate n dice rolls
+    return ''.join(str(secrets.randbelow(6)+1) for i in range(dice))
+
+def walkthrough(alt_short_wordlist):
     #Help text
     print("Roll five dice (or four for the short wordlist) and enter the result in no particular order")
     print("Then repeat it another five times")
@@ -26,7 +34,7 @@ def run(alt_short_wordlist):
             print("Please enter a valid number.")
             print(err)
 
-    #As per EFF recomendations, roll a total of 6 times
+    #As per EFF recomendations roll a total of 6 times, ignoring incorrect values
     die_rolls = 5
     while die_rolls > 0:
         try:

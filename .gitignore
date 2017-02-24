@@ -1,7 +1,8 @@
-build/
-dist/
-venv/
-parasol.egg-info/
+/build/
+/dist/
+/venv/
+/.venv/
+/*.egg-info/
 *.cfg
 *.ini
 *.pyc
