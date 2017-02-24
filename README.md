@@ -31,7 +31,12 @@ python setup.py install
 Usage: wordlist [OPTIONS]
 
 Options:
-        -t, --alt-short-wordlist  Use the alternative short wordlist, with longer
-                                  words that may be more memorable. Needs four dice
+        -a, --alt-short-wordlist  Use the alternative short wordlist, with longer
+                                  words that may be more memorable. Needs four dice.
+        -s, --short-wordlist      Use the short wordlist. This is assumed to be true
+                                  if four dice are entered and the alternative
+                                  wordlist hasn't been selected.
+        -r, --random              Rely on machine generated random numbers to
+                                  generate passphrases.
         --help                    Show this message and exit.
 ```
