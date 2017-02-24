@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 setup(
-    name='wordlist',
+    name='dicepass',
     description='Easy way to use the EFF wordlist(s) when rolling your dice',
     version='0.1',
     packages=find_packages(),
@@ -15,7 +15,7 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        wordlist=wordlist.cli:run
+        dicepass=dicepass.cli:run
     ''',
     classifiers = [
         "Programming Language :: Python",
